@@ -46,19 +46,19 @@ Add 'trackman' to your INSTALLED_APPS in Django's settings:
 Then enable trackman by setting the variable `TRACKMAN_ENABLED` to `True`.
 
 
-Tracking Models
----------------
+Action Tracking Models
+----------------------
 
 Django Trackman can be used to create custom tracking models.
-Here's an example of a model class that extends Django Trackman's TrackingBaseModel:
+Here's an example of a model class that extends Django Trackman's `TrackingActionModel``:
 
 
 .. code-block:: python
 
-    from trackman.models import TrackingBaseModel
+    from trackman.models import TrackingActionModel
     from django.db import models
 
-    class TrackingAction(TrackingBaseModel):
+    class TrackingAction(TrackingActionModel):
         team = models.CharField("Team", max_length=256, blank=True)
 
         def __str__(self):
@@ -83,6 +83,15 @@ your settings.
 
 Here, you'll notice that we have also defined a additional tracking model for data
 quality tracking.
+
+
+Base Tracking Models
+--------------------
+
+If your models are not action oriented, you can always extend the `TrackingBaseModel`
+that's an empty abstract model that only serves as a way to let Trackman know that
+your model should be consider as a tracking model and thus should be taken into account
+when during database routing.
 
 
 Admin

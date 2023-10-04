@@ -3,6 +3,21 @@ from django.utils.translation import gettext_lazy as _
 
 
 class TrackingBaseModel(models.Model):
+    """
+    The base class that is inherited by models requiring tracking.
+    Models that extend this class will be consider as tracking models,
+    which matters when it comes to database routing.
+    """
+
+    class Meta:
+        abstract = True
+
+
+class TrackingActionModel(TrackingBaseModel):
+    """
+    This class is intended for models that need to track actions or events
+    """
+
     created = models.DateTimeField(_("created"), auto_now_add=True)
     modified = models.DateTimeField(_("modified"), auto_now=True)
     action = models.CharField(_("action"), max_length=256, blank=True)
