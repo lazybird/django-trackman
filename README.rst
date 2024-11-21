@@ -2,7 +2,20 @@ Django Trackman
 ===============
 
 
-Django Trackman helps with tracking and logging.
+::
+
+    +---------------------------+
+    |                           |
+    |                           |
+    |       .-.      _______    |
+    |      {}``; |==|_______D   |
+    |      / ('        /|\      | Django Trackman helps with
+    |  (  /  |        / | \     | tracking and logging.
+    |   \(_)_]]      /  |  \    |
+    |                           |
+    |                           |
+    +---------------------------+
+
 
 
 Features
@@ -223,8 +236,9 @@ As a consequence, all admin actions will be copied to you tracking table.
 API End-point
 -------------
 
-Django Trackman provides a mixin you can use with Django Rest Framework's ViewSet to create an API end-point
-for your application to track actions. This could be useful for tracking front-end actions.
+Django Trackman provides a mixin you can use with Django Rest Framework's ViewSet to create
+an API end-point for your application to track actions. This could be useful for tracking
+front-end actions.
 
 Here's how you can use TrackingViewSetMixin in a Django REST ViewSet for action tracking:
 
