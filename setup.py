@@ -15,6 +15,7 @@ setup(
     version=trackman.__version__,
     description=read("DESCRIPTION"),
     long_description=read("README.rst"),
+    long_description_content_type="text/x-rst",
     keywords="trackman django log logging tracking activity",
     packages=find_packages(),
     author="",
