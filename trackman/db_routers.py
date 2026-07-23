@@ -68,6 +68,8 @@ class TrackingDatabaseRouter:
         """
         Determines if migration is allowed to a particular database.
         """
+        if db == self.database_alias:
+            return app_label in self.tracking_app_labels
         if app_label in self.tracking_app_labels:
-            return db == self.database_alias
+            return False
         return None
